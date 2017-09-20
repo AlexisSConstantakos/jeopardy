@@ -1,19 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { JeopardyService } from './jeopardy.service';
-import { ButtonComponent } from './button/button.component';
+import { AnswerComponent } from './answer/answer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ButtonComponent
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [
     JeopardyService

@@ -1,40 +1,23 @@
-
-<!-- {{questionInfo | json}} -->
-
-
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div *ngIf="questionInfo" style="text-align:center">
   <h1>
     Welcome to {{title}}!
   </h1>
+  <h2>The question is: </h2>
+    <p>
+    {{questionInfo.question}}
+    </p>
+  <h2>Category</h2>
+    <p>
+    {{questionInfo.category.title}}
+    </p>
+  <h2>Point Value</h2>
+    <p>
+    {{questionInfo.value}}
+    </p>
+  <br>
+  <br>
+
+  <app-answer (finishedCheckingAnswer)="sampleMethod($event)" [questionInfo]="questionInfo"></app-answer>
+    
 </div>
-<h2>
-  The question is: 
-</h2>
-  <p>
-  {{questionInfo?.question}}
-  </p>
-<h2>Category</h2>
-  <p>
-  {{questionInfo?.category.title}}
-  </p>
-<h2>Point Value</h2>
-  <p>
-  {{questionInfo?.value}}
-  </p>
-
-<textarea name="userAnswer" id="userAnswer"></textarea>
-<button (click)="onClickMe()">Answer Here</button>
-
-<br>
-<br>
-
-<span>
-  SCORE: {{score}}
-</span>
-<br>
-<br>
-  
-  <p>
-  Answer: {{questionInfo?.answer}}
-  </p>
